@@ -45,5 +45,12 @@ public class Main {
         }
         
     }
-    
+    private static void matricularAlunoEmDisciplina() {
+        System.out.print("Digite o ID do Aluno: ");
+        int idAluno = scanner.nextInt();
+        scanner.nextLine();
+        System.out.print("Digite o Código da Disciplina: ");
+        String codigoDisciplina = scanner.nextLine();
+        escola.matricularAlunoEmDisciplina(idAluno, codigoDisciplina);
+    }
 }
