@@ -13,7 +13,12 @@ private Map<Integer, Aluno> alunos;
     }
 
     public void adicionarAluno(Aluno aluno) {
-        alunos.put(aluno.getId(), aluno);
+        if (alunos.containsKey(aluno.getId())) {
+            System.out.println("\u001B[31mErro, já existe um aluno com a matricula " +  aluno.getId()+"\u001B[m");
+        } else {
+            alunos.put(aluno.getId(), aluno);
+            System.out.println("Aluno cadastrado com sucesso!");
+        }
     }
 
     public void adicionarProfessor(Professor professor) {

@@ -70,7 +70,6 @@ public class Main {
         String nome = scanner.nextLine();
         Aluno aluno = new Aluno(id, nome);
         escola.adicionarAluno(aluno);
-        System.out.println("Aluno cadastrado com sucesso!");
     }
     private static void cadastrarProfessor() {
         System.out.print("Digite o ID do Professor: ");
@@ -109,17 +108,18 @@ public class Main {
         escola.matricularAlunoEmDisciplina(idAluno, codigoDisciplina);
     }
     private static void listarAlunos() {
-        System.out.println("\n--- Lista de Alunos ---");
+        System.out.println("\n--- Lista de Alunos ---\n");
         escola.listarAlunos();
+        System.out.println("------------------------");
     }
 
     private static void listarProfessores() {
-        System.out.println("\n--- Lista de Professores ---");
+        System.out.println("\n--- Lista de Professores ---\n");
         escola.listarProfessores();
     }
 
     private static void listarDisciplinas() {
-        System.out.println("\n--- Lista de Disciplinas ---");
+        System.out.println("\n--- Lista de Disciplinas ---\n");
         escola.listarDisciplinas();
     }
     private static void registrarNota() {
