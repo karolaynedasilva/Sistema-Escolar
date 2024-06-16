@@ -36,7 +36,7 @@ public class Disciplina {
 
     @Override
     public String toString() {
-        return "Disciplina{codigo='" + codigo + "', nome='" + nome + "', professor=" + professor.getNome() + "}";
+        return "Código da Disciplina:" + codigo + "', Nome:" + nome + ", Professor:" + professor.getNome() + "";
     }
 }
 

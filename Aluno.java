@@ -40,6 +40,6 @@ public class Aluno {
     }
     @Override
     public String toString() {
-        return "Matricula do Aluno: " + id +"\nNome: " + nome + "";
+        return "Matricula do Aluno: " + id +", Nome: " + nome + "";
     }
 }

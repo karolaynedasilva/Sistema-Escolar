@@ -42,7 +42,7 @@ public class Main {
                     System.out.println("Saindo...");
                     break;
                 default:
-                    System.out.println("Opção inválida!");
+                    System.out.println("\u001B[31mOpção inválida, tente novamente...\u001B[m");
                     break;
             }
         } while (opcao != 0);
@@ -58,7 +58,9 @@ public class Main {
         System.out.println("7. Lista de Professores");
         System.out.println("8. Lista de Disciplinas");
         System.out.println("9. Imprimir Boletim");
-        System.out.println("0. Sair");
+        System.out.println("0. Sair\n");
+        System.out.println("--------------------------------");
+
         System.out.print("Escolha uma opção: ");
     
     }
@@ -79,7 +81,7 @@ public class Main {
         String nome = scanner.nextLine();
         Professor professor = new Professor(id, nome);
         escola.adicionarProfessor(professor);
-        System.out.println("Professor cadastrado com sucesso!");
+        System.out.println("\u001B[32mProfessor cadastrado com sucesso!\u001B[m");
     }
     private static void cadastrarDisciplina() {
         System.out.print("Digite o Código da Disciplina: ");
@@ -93,9 +95,9 @@ public class Main {
         if (professor != null) {
             Disciplina disciplina = new Disciplina(codigo, nome, professor);
             escola.adicionarDisciplina(disciplina);
-            System.out.println("Disciplina cadastrada com sucesso!");
+            System.out.println("\u001B[32mDisciplina cadastrada com sucesso!\u001B[m");
         } else {
-            System.out.println("Professor não encontrado!");
+            System.out.println("\u001B[31mProfessor não encontrado!\\u001B[m");
         }
         
     }
@@ -110,7 +112,7 @@ public class Main {
     private static void listarAlunos() {
         System.out.println("\n--- Lista de Alunos ---\n");
         escola.listarAlunos();
-        System.out.println("------------------------");
+
     }
 
     private static void listarProfessores() {

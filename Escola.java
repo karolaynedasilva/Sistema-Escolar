@@ -22,11 +22,21 @@ private Map<Integer, Aluno> alunos;
     }
 
     public void adicionarProfessor(Professor professor) {
-        professores.put(professor.getId(), professor);
+        if (professores.containsKey(professor.getId())) {
+            System.out.println("\u001B[31mErro, já existe um professor com a matricula " +  professor.getId()+"\u001B[m");
+        } else {
+            professores.put(professor.getId(), professor);
+            System.out.println("\\u001B[32mProfessor cadastrado com sucesso!\\u001B[m");
+        }
     }
 
     public void adicionarDisciplina(Disciplina disciplina) {
-        disciplinas.put(disciplina.getCodigo(), disciplina);
+        if (disciplinas.containsKey(disciplina.getCodigo())) {
+            System.out.println("\u001B[31mErro, já existe uma disciplina com o código " +  disciplina.getCodigo()+"\u001B[m");
+        } else {
+            disciplinas.put(disciplina.getCodigo(), disciplina);
+            System.out.println("\\u001B[32mDisciplina cadastrada com sucesso!\\u001B[m");
+        }
     }
 
     public Aluno consultarAluno(int id) {
