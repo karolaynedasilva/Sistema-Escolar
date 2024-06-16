@@ -63,5 +63,22 @@ private Map<Integer, Aluno> alunos;
             System.out.println(disciplina);
         }
     }
-
+    public void registrarNota(int alunoId, String codigoDisciplina, double nota) {
+        Aluno aluno = alunos.get(alunoId);
+        Disciplina disciplina = disciplinas.get(codigoDisciplina);
+        if (aluno != null && disciplina != null) {
+            aluno.adicionarNota(disciplina, nota);
+            System.out.println("Nota registrada com sucesso!");
+        } else {
+            System.out.println("Aluno ou Disciplina não encontrado!");
+        }
+    }
+    public void imprimirBoletim(int alunoId) {
+        Aluno aluno = alunos.get(alunoId);
+        if (aluno != null) {
+            aluno.imprimirBoletim();
+        } else {
+            System.out.println("Aluno não encontrado!");
+        }
+    }
 }
