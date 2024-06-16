@@ -27,4 +27,23 @@ public class Main {
         escola.adicionarProfessor(professor);
         System.out.println("Professor cadastrado com sucesso!");
     }
+    private static void cadastrarDisciplina() {
+        System.out.print("Digite o Código da Disciplina: ");
+        String codigo = scanner.nextLine();
+        System.out.print("Digite o Nome da Disciplina: ");
+        String nome = scanner.nextLine();
+        System.out.print("Digite o ID do Professor responsável: ");
+        int idProfessor = scanner.nextInt();
+        scanner.nextLine();
+        Professor professor = escola.consultarProfessor(idProfessor);
+        if (professor != null) {
+            Disciplina disciplina = new Disciplina(codigo, nome, professor);
+            escola.adicionarDisciplina(disciplina);
+            System.out.println("Disciplina cadastrada com sucesso!");
+        } else {
+            System.out.println("Professor não encontrado!");
+        }
+        
+    }
+    
 }
