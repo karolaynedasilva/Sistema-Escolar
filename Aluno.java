@@ -7,11 +7,13 @@ public class Aluno {
     private int id;
     private String nome;
     private Map<Disciplina, List<Double>> notas;
+    private Map<Disciplina, Integer> faltas;
 
     public Aluno(int id, String nome) {
         this.id = id;
         this.nome = nome;
         this.notas = new HashMap<>();
+        this.faltas = new HashMap<>();
     }
 
     public int getId() {
@@ -29,6 +31,10 @@ public class Aluno {
         notas.putIfAbsent(disciplina, new ArrayList<>());
         notas.get(disciplina).add(nota);
     }
+    public void registrarFalta(Disciplina disciplina) {
+        faltas.putIfAbsent(disciplina, 0);
+        faltas.put(disciplina, faltas.get(disciplina) + 1);
+    }
 
     public void imprimirBoletim() {
         System.out.println("Boletim de " + nome + ":");
@@ -36,6 +42,12 @@ public class Aluno {
             Disciplina disciplina = entry.getKey();
             List<Double> notasDisciplina = entry.getValue();
             System.out.println(disciplina.getNome() + ": " + notasDisciplina);
+        }
+        System.out.println("Faltas:");
+        for (Map.Entry<Disciplina, Integer> entry : faltas.entrySet()) {
+            Disciplina disciplina = entry.getKey();
+            Integer faltasDisciplina = entry.getValue();
+            System.out.println(disciplina.getNome() + ": " + faltasDisciplina + " faltas");
         }
     }
     @Override

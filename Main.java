@@ -27,22 +27,25 @@ public class Main {
                     registrarNota();
                     break;
                 case 6:
-                    listarAlunos();
+                    registrarFalta();
                     break;
                 case 7:
-                    listarProfessores();
+                    listarAlunos();
                     break;
                 case 8:
-                    listarDisciplinas();
+                    listarProfessores();
                     break;
                 case 9:
+                    listarDisciplinas();
+                    break;
+                case 10:
                     imprimirBoletim();
                     break;
                 case 0:
                     System.out.println("Saindo...");
                     break;
                 default:
-                    System.out.println("\u001B[31mOpção inválida, tente novamente...\u001B[m");
+                    System.out.println("Opção inválida!");
                     break;
             }
         } while (opcao != 0);
@@ -54,11 +57,12 @@ public class Main {
         System.out.println("3. Cadastrar Disciplina");
         System.out.println("4. Matricular Aluno em Disciplina");
         System.out.println("5. Registrar Nota");
-        System.out.println("6. Lista de Alunos");
-        System.out.println("7. Lista de Professores");
-        System.out.println("8. Lista de Disciplinas");
-        System.out.println("9. Imprimir Boletim");
-        System.out.println("0. Sair\n");
+        System.out.println("6. Registrar Falta");
+        System.out.println("7. Listar Alunos");
+        System.out.println("8. Listar Professores");
+        System.out.println("9. Listar Disciplinas");
+        System.out.println("10.Imprimir Boletim");
+        System.out.println("0. Sair");
         System.out.println("--------------------------------");
 
         System.out.print("Escolha uma opção: ");
@@ -97,7 +101,7 @@ public class Main {
             escola.adicionarDisciplina(disciplina);
             System.out.println("\u001B[32mDisciplina cadastrada com sucesso!\u001B[m");
         } else {
-            System.out.println("\u001B[31mProfessor não encontrado!\\u001B[m");
+            System.out.println("\u001B[31mProfessor não encontrado!\u001B[m");
         }
         
     }
@@ -134,7 +138,14 @@ public class Main {
         double nota = scanner.nextDouble();
         escola.registrarNota(idAluno, codigoDisciplina, nota);
     }
-
+    private static void registrarFalta() {
+        System.out.print("Digite o ID do Aluno: ");
+        int idAluno = scanner.nextInt();
+        scanner.nextLine();
+        System.out.print("Digite o Código da Disciplina: ");
+        String codigoDisciplina = scanner.nextLine();
+        escola.registrarFalta(idAluno, codigoDisciplina);
+    }
     private static void imprimirBoletim() {
         System.out.print("Digite o ID do Aluno: ");
         int idAluno = scanner.nextInt();

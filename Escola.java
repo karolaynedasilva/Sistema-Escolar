@@ -56,6 +56,7 @@ private Map<Integer, Aluno> alunos;
         Disciplina disciplina = disciplinas.get(codigoDisciplina);
         if (aluno != null && disciplina != null) {
             disciplina.matricularAluno(aluno);
+            System.out.println("\u001B[32mAluno matriculado com sucesso!\u001B[m");
         } else {
             System.out.println("\u001B[33mAluno ou Disciplina não encontrado!\u001B[m");
         }
@@ -86,6 +87,16 @@ private Map<Integer, Aluno> alunos;
             System.out.println("\u001B[32mNota registrada com sucesso!\u001B[m");
         } else {
             System.out.println("\u001B[33mAluno ou Disciplina não encontrado!\u001B[m");
+        }
+    }
+    public void registrarFalta(int alunoId, String codigoDisciplina) {
+        Aluno aluno = alunos.get(alunoId);
+        Disciplina disciplina = disciplinas.get(codigoDisciplina);
+        if (aluno != null && disciplina != null) {
+            aluno.registrarFalta(disciplina);
+            System.out.println("Falta registrada com sucesso!");
+        } else {
+            System.out.println("Aluno ou Disciplina não encontrado!");
         }
     }
     public void imprimirBoletim(int alunoId) {
