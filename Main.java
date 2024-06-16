@@ -5,7 +5,10 @@ public class Main {
     private static Escola escola = new Escola();
 
     public static void main(String[] args) {
-        System.out.print("Digite a Matricula do Aluno: ");
+        
+    }
+    private static void cadastrarAluno() {
+        System.out.print("Digite o ID do Aluno: ");
         int id = scanner.nextInt();
         scanner.nextLine();
         System.out.print("Digite o Nome do Aluno: ");
@@ -14,5 +17,14 @@ public class Main {
         escola.adicionarAluno(aluno);
         System.out.println("Aluno cadastrado com sucesso!");
     }
-
+    private static void cadastrarProfessor() {
+        System.out.print("Digite o ID do Professor: ");
+        int id = scanner.nextInt();
+        scanner.nextLine();
+        System.out.print("Digite o Nome do Professor: ");
+        String nome = scanner.nextLine();
+        Professor professor = new Professor(id, nome);
+        escola.adicionarProfessor(professor);
+        System.out.println("Professor cadastrado com sucesso!");
+    }
 }
