@@ -53,4 +53,18 @@ public class Main {
         String codigoDisciplina = scanner.nextLine();
         escola.matricularAlunoEmDisciplina(idAluno, codigoDisciplina);
     }
+    private static void listarAlunos() {
+        System.out.println("\n--- Lista de Alunos ---");
+        escola.listarAlunos();
+    }
+
+    private static void listarProfessores() {
+        System.out.println("\n--- Lista de Professores ---");
+        escola.listarProfessores();
+    }
+
+    private static void listarDisciplinas() {
+        System.out.println("\n--- Lista de Disciplinas ---");
+        escola.listarDisciplinas();
+    }
 }
