@@ -17,7 +17,7 @@ private Map<Integer, Aluno> alunos;
             System.out.println("\u001B[31mErro, já existe um aluno com a matricula " +  aluno.getId()+"\u001B[m");
         } else {
             alunos.put(aluno.getId(), aluno);
-            System.out.println("Aluno cadastrado com sucesso!");
+            System.out.println("\u001B[32mAluno cadastrado com sucesso!\u001B[m");
         }
     }
 
@@ -47,7 +47,7 @@ private Map<Integer, Aluno> alunos;
         if (aluno != null && disciplina != null) {
             disciplina.matricularAluno(aluno);
         } else {
-            System.out.println("Aluno ou Disciplina não encontrado!");
+            System.out.println("\u001B[33mAluno ou Disciplina não encontrado!\u001B[m");
         }
     }
 
@@ -73,9 +73,9 @@ private Map<Integer, Aluno> alunos;
         Disciplina disciplina = disciplinas.get(codigoDisciplina);
         if (aluno != null && disciplina != null) {
             aluno.adicionarNota(disciplina, nota);
-            System.out.println("Nota registrada com sucesso!");
+            System.out.println("\u001B[32mNota registrada com sucesso!\u001B[m");
         } else {
-            System.out.println("Aluno ou Disciplina não encontrado!");
+            System.out.println("\u001B[33mAluno ou Disciplina não encontrado!\u001B[m");
         }
     }
     public void imprimirBoletim(int alunoId) {
@@ -83,7 +83,7 @@ private Map<Integer, Aluno> alunos;
         if (aluno != null) {
             aluno.imprimirBoletim();
         } else {
-            System.out.println("Aluno não encontrado!");
+            System.out.println("\u001B[31mAluno não encontrado!\u001B[m");
         }
     }
 }
