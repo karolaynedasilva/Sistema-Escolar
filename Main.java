@@ -9,7 +9,7 @@ public class Main {
         do {
             exibirMenu();
             opcao = scanner.nextInt();
-            scanner.nextLine(); 
+            scanner.nextLine(); // Consume newline
             switch (opcao) {
                 case 1:
                     cadastrarAluno();
@@ -50,8 +50,9 @@ public class Main {
             }
         } while (opcao != 0);
     }
+
     private static void exibirMenu() {
-        System.out.println("\n--- Sistema de Gestão Escolar ---\n" + "");
+        System.out.println("\n--- Sistema de Gestão Escolar ---");
         System.out.println("1. Cadastrar Aluno");
         System.out.println("2. Cadastrar Professor");
         System.out.println("3. Cadastrar Disciplina");
@@ -61,13 +62,11 @@ public class Main {
         System.out.println("7. Listar Alunos");
         System.out.println("8. Listar Professores");
         System.out.println("9. Listar Disciplinas");
-        System.out.println("10.Imprimir Boletim");
+        System.out.println("10. Imprimir Boletim");
         System.out.println("0. Sair");
-        System.out.println("--------------------------------");
-
         System.out.print("Escolha uma opção: ");
-    
     }
+
     private static void cadastrarAluno() {
         System.out.print("Digite o ID do Aluno: ");
         int id = scanner.nextInt();
@@ -77,6 +76,7 @@ public class Main {
         Aluno aluno = new Aluno(id, nome);
         escola.adicionarAluno(aluno);
     }
+
     private static void cadastrarProfessor() {
         System.out.print("Digite o ID do Professor: ");
         int id = scanner.nextInt();
@@ -86,6 +86,7 @@ public class Main {
         Professor professor = new Professor(id, nome);
         escola.adicionarProfessor(professor);
     }
+
     private static void cadastrarDisciplina() {
         System.out.print("Digite o Código da Disciplina: ");
         String codigo = scanner.nextLine();
@@ -101,8 +102,8 @@ public class Main {
         } else {
             System.out.println("\u001B[31mProfessor não encontrado!\u001B[m");
         }
-        
     }
+
     private static void matricularAlunoEmDisciplina() {
         System.out.print("Digite o ID do Aluno: ");
         int idAluno = scanner.nextInt();
@@ -111,21 +112,7 @@ public class Main {
         String codigoDisciplina = scanner.nextLine();
         escola.matricularAlunoEmDisciplina(idAluno, codigoDisciplina);
     }
-    private static void listarAlunos() {
-        System.out.println("\n--- Lista de Alunos ---\n");
-        escola.listarAlunos();
 
-    }
-
-    private static void listarProfessores() {
-        System.out.println("\n--- Lista de Professores ---\n");
-        escola.listarProfessores();
-    }
-
-    private static void listarDisciplinas() {
-        System.out.println("\n--- Lista de Disciplinas ---\n");
-        escola.listarDisciplinas();
-    }
     private static void registrarNota() {
         System.out.print("Digite o ID do Aluno: ");
         int idAluno = scanner.nextInt();
@@ -136,6 +123,7 @@ public class Main {
         double nota = scanner.nextDouble();
         escola.registrarNota(idAluno, codigoDisciplina, nota);
     }
+
     private static void registrarFalta() {
         System.out.print("Digite o ID do Aluno: ");
         int idAluno = scanner.nextInt();
@@ -144,6 +132,22 @@ public class Main {
         String codigoDisciplina = scanner.nextLine();
         escola.registrarFalta(idAluno, codigoDisciplina);
     }
+
+    private static void listarAlunos() {
+        System.out.println("\n--- Lista de Alunos ---");
+        escola.listarAlunos();
+    }
+
+    private static void listarProfessores() {
+        System.out.println("\n--- Lista de Professores ---");
+        escola.listarProfessores();
+    }
+
+    private static void listarDisciplinas() {
+        System.out.println("\n--- Lista de Disciplinas ---");
+        escola.listarDisciplinas();
+    }
+
     private static void imprimirBoletim() {
         System.out.print("Digite o ID do Aluno: ");
         int idAluno = scanner.nextInt();

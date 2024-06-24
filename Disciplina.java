@@ -1,7 +1,7 @@
 import java.util.HashSet;
 import java.util.Set;
 
-public class Disciplina {
+class Disciplina implements InterfaceDisciplina {
     private String codigo;
     private String nome;
     private Professor professor;
@@ -29,14 +29,13 @@ public class Disciplina {
     public Set<Aluno> getAlunos() {
         return alunos;
     }
-
+    
     public void matricularAluno(Aluno aluno) {
         alunos.add(aluno);
     }
-
+    
     @Override
     public String toString() {
-        return "Código da Disciplina:" + codigo + ", Nome:" + nome + ", Professor:" + professor.getNome() + "";
+        return "Código da Disciplina: " + codigo + ", Nome: " + nome + ", Professor: " + professor.getNome() + " ";
     }
 }
-
