@@ -9,7 +9,7 @@ public class Main {
         do {
             exibirMenu();
             opcao = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
+            scanner.nextLine(); 
             switch (opcao) {
                 case 1:
                     cadastrarAluno();
@@ -85,7 +85,6 @@ public class Main {
         String nome = scanner.nextLine();
         Professor professor = new Professor(id, nome);
         escola.adicionarProfessor(professor);
-        System.out.println("\u001B[32mProfessor cadastrado com sucesso!\u001B[m");
     }
     private static void cadastrarDisciplina() {
         System.out.print("Digite o Código da Disciplina: ");
@@ -99,7 +98,6 @@ public class Main {
         if (professor != null) {
             Disciplina disciplina = new Disciplina(codigo, nome, professor);
             escola.adicionarDisciplina(disciplina);
-            System.out.println("\u001B[32mDisciplina cadastrada com sucesso!\u001B[m");
         } else {
             System.out.println("\u001B[31mProfessor não encontrado!\u001B[m");
         }

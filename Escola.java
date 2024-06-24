@@ -2,7 +2,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Escola {
-private Map<Integer, Aluno> alunos;
+    private Map<Integer, Aluno> alunos;
     private Map<Integer, Professor> professores;
     private Map<String, Disciplina> disciplinas;
 
@@ -26,7 +26,7 @@ private Map<Integer, Aluno> alunos;
             System.out.println("\u001B[31mErro, já existe um professor com a matricula " +  professor.getId()+"\u001B[m");
         } else {
             professores.put(professor.getId(), professor);
-            System.out.println("\\u001B[32mProfessor cadastrado com sucesso!\\u001B[m");
+            System.out.println("\u001B[32mProfessor cadastrado com sucesso!\u001B[m");
         }
     }
 
@@ -35,7 +35,7 @@ private Map<Integer, Aluno> alunos;
             System.out.println("\u001B[31mErro, já existe uma disciplina com o código " +  disciplina.getCodigo()+"\u001B[m");
         } else {
             disciplinas.put(disciplina.getCodigo(), disciplina);
-            System.out.println("\\u001B[32mDisciplina cadastrada com sucesso!\\u001B[m");
+            System.out.println("\u001B[32mDisciplina cadastrada com sucesso!\u001B[m");
         }
     }
 
@@ -94,9 +94,9 @@ private Map<Integer, Aluno> alunos;
         Disciplina disciplina = disciplinas.get(codigoDisciplina);
         if (aluno != null && disciplina != null) {
             aluno.registrarFalta(disciplina);
-            System.out.println("Falta registrada com sucesso!");
+            System.out.println("\u001B[32mFalta registrada com sucesso!\u001B[m");
         } else {
-            System.out.println("Aluno ou Disciplina não encontrado!");
+            System.out.println("\u001B[33mAluno ou Disciplina não encontrado!\u001B[m");
         }
     }
     public void imprimirBoletim(int alunoId) {
